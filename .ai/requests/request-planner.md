@@ -1,4 +1,5 @@
 ---
+OUTPUT_LANGUAGE: pt-BR
 PROJECT_NAME: portfolio-profissional-2026
 
 PROJECT_TYPE:

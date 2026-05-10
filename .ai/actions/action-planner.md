@@ -1,11 +1,47 @@
 Utilize o agente planner-engineer.
 
-Objetivo:
-Transformar o conteúdo de:
+Input:
 `.ai/requests/request-planner.md`
 
-em um documento de planejamento baseado no template:
+Template:
 `.ai/templates/planner-template.md`
 
-Output obrigatório:
+Destino documental:
 `.ai/planner-out/planner.md`
+
+---
+
+# Regra Obrigatória de Idioma
+
+O idioma FINAL do documento gerado
+DEVE obrigatoriamente seguir o valor definido em:
+
+`OUTPUT_LANGUAGE`
+
+presente no request.
+
+Mapeamento suportado:
+
+- `pt-BR` → Português Brasileiro
+- `en-US` → Inglês Americano
+
+Esta regra possui prioridade máxima.
+
+Todo o conteúdo textual gerado
+DEVE seguir integralmente o idioma definido,
+incluindo:
+
+- títulos
+- descrições
+- tarefas
+- tabelas
+- roadmap
+- decisões
+- critérios
+- documentação auxiliar
+
+Caso o parâmetro não exista,
+utilizar:
+
+`en-US`
+como padrão.

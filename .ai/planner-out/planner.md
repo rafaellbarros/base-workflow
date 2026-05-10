@@ -1,259 +1,285 @@
 # Planner: portfolio-profissional-2026
 
-- Documento exclusively de planning.
-- No section represents implementation,
-- scaffold, provisionamento or execution real.
+- Documento exclusivamente de planejamento.
+- Nenhuma seção representa implementação,
+- scaffold, provisionamento ou execução real.
 
 ---
 
-# 🎯 Objective of Project
+# 🎯 Objetivo do Projeto
 
-## Vision Overview
+## Visão Geral
 
-Create a professional portfolio that is extremely fast, minimalist, performant and simple to maintain. The project functions as a declarative content platform where maintenance is extremely simple: adding new projects by altering only JSON, updating experiences without editing components.
-The visual must convey seniority, technical clarity, organization and professional credibility. The main focus is not exaggerated animation or flashy design. The focus is:
+Criar um portfólio profissional extremamente rápido, minimalista, performático e simples de manter utilizando Next.js 15 com arquitetura declarativa baseada em JSON local. O projeto funciona como uma plataforma de conteúdo onde a manutenção é feita através de arquivos JSON sem necessidade de alterar componentes React.
 
-- performance
-- readability
-- fluid experience
-- clean architecture
-- ease of future evolution
+## Problema Resolvido
 
-The project must be prepared for:
+- Reduzir drasticamente o tempo de atualização do portfólio
+- Eliminar dependência de editores visuais ou CMS complexos
+- Permitir que desenvolvedores atualizem conteúdo via JSON declarativo
+- Manter performance máxima com mínimo consumo JavaScript
 
-- future expansion
-- internationalization
-- technical blog
-- future integration with CMS/headless APIs
-- automations with AI
+## Resultado Esperado
 
-## Problem Statement
+Um portfólio profissional que:
+- Carrega instantaneamente em qualquer dispositivo
+- É atualizado apenas editando arquivos JSON
+- Transmite credibilidade técnica e organização
+- Funciona como base para futuras expansões (blog, documentação)
 
-Build a portfolio that functions as a declarative content platform where maintenance is extremely simple and the architecture remains clean and predictable.
+## Público-Alvo
 
-## Expected Outcome
+- Recrutadores técnicos
+- Tech leads de empresas internacionais
+- Consultorias especializadas em tecnologia
+- Empresas que buscam validar competência técnica
 
-A professional portfolio website that:
-- Is extremely fast, minimalist, performant and simple to maintain
-- Functions as a declarative content platform
-- Allows adding new projects by altering only JSON without editing React components
-- Renders experiences dynamically from declarative structure
-- Transmits seniority, technical clarity, organization and professional credibility
-- Focuses on performance, readability, fluid experience, clean architecture and ease of future evolution
-- Is prepared for future expansion, internationalization, technical blog, CMS/headless APIs integration and AI automations
+## Critérios de Sucesso
 
-## Target Audience
-
-- Recruiters
-- Tech leads
-- Consultants
-- International companies
-
-## Success Criteria
-
-- High performance (Lighthouse 95+)
-- Low JS consumption
-- Easy maintenance via JSON updates only
-- Accessibility
-- SEO-friendly
-- Responsive layout with mobile-first approach
-- Clean and predictable architecture
+- Lighthouse Performance ≥ 95
+- Tempo de carregamento < 1s em redes móveis
+- Zero erros de console após renderização completa
+- Atualização de conteúdo via JSON sem rebuild do projeto
+- Legibilidade imediata do conteúdo técnico
 
 ---
 
-# 🧠 Strategic Context
+# 🧠 Contexto Estratégico
 
-## Project Type
+## Tipo de Projeto
 
-- Portfolio
-- Personal Brand
-- AI-First
+- Portfolio profissional
+- Personal branding para desenvolvedor sênior
+- Plataforma AI-first com arquitetura moderna
 
-## Technical Priorities
+## Prioridades Técnicas
 
-- Performance
-- Simplicity
-- Readability
-- Maintenance
-- Reutilization
+1. **Performance** - Lighthouse score ≥ 95 em todas as métricas
+2. **Simplicidade** - Arquitetura compreensível em < 30 minutos de leitura
+3. **Legibilidade** - Conteúdo sempre prioritário sobre efeitos visuais
+4. **Manutenção** - Atualização via JSON sem tocar no código
+5. **Reutilização** - Componentes modulares para expansão futura
 
-## Constraints
+## Restrições
 
-- Avoid overengineering
-- Avoid CMS
-- Avoid unnecessary dependencies
-- Avoid complex build
+- Evitar overengineering e decisões arquiteturais prematuras
+- Não utilizar CMS ou headless CMS
+- Minimizar dependências desnecessárias
+- Build process deve ser rápido (< 30s)
+- Sem animações excessivas que comprometam performance
 
 ---
 
-# 🎨 Design Guidelines
+# 🎨 Diretrizes de Design
 
-## Visual Style
+## Estilo Visual
 
-- Dark mode
-- Minimalist
-- Software engineer senior aesthetic
-- High readability
-- Focus on content
-- No excessive elements
+- Dark mode como padrão
+- Minimalismo técnico (estilo "software engineer senior")
+- Alta legibilidade em todos os tamanhos de tela
+- Foco total no conteúdo, sem elementos decorativos excessivos
+- Paleta neutra com alto contraste para leitura
 
-## Visual Identity
+## Identidade Esperada
 
-The visual must convey:
-
-- Seniority
-- Technical clarity
-- Organization
-- Professional credibility
-
-The focus is not exaggerated animation or flashy design. The main focus is performance, readability, fluid experience, clean architecture and ease of future evolution.
+O visual deve comunicar:
+- Senioridade técnica e experiência
+- Clareza na organização profissional
+- Organização metodológica
+- Credibilidade técnica comprovada
+- Abordagem pragmática e direta
 
 ## UX Goals
 
-- High performance (Lighthouse 95+)
-- Low JS consumption
-- Easy maintenance via JSON updates only
-- Accessibility
-- SEO-friendly
-- Responsive layout with mobile-first approach
-- Clean and predictable architecture
+- Navegação fluida sem micro-interações desnecessárias
+- Hierarquia visual clara para leitura rápida
+- Acessibilidade WCAG 2.1 AA como mínimo
+- Mobile-first com experiência igualitária
+- Feedback imediato de interações essenciais
 
 ---
 
-# 🏗️ Technical Architecture Conceptual
+# 🏗️ Arquitetura Técnica Conceitual
 
-## Architectural Strategy
+## Estratégia Arquitetural
 
-| Category          | Strategy           |
+| Categoria          | Estratégia           |
 | ------------------ | -------------------- |
-| Rendering          | SSR + Static Generation |
-| Data Flow          | Local JSON-driven |
-| Component Strategy  | Reusable UI |
-| SEO                | Dynamic Metadata |
-| State Management   | Declarative JSON-based |
+| Rendering          | SSR + Static Generation para máxima performance e SEO |
+| Data Flow          | Local JSON-driven com lazy loading de dados |
+| Component Strategy | Reusable UI components com composition pattern |
+| SEO                | Dynamic metadata via Next.js 15 App Router |
+| State Management   | Server Components como padrão, client state mínimo |
 
 ---
 
-## Stack Technology Planned
+## Stack Tecnológica Planejada
 
-| Category       | Technology      |
+| Categoria       | Tecnologia      |
 | --------------- | --------------- |
-| Frontend        | Next.js 15 |
-| Backend         | None (SSR/Static) |
+| Frontend        | Next.js 15 (App Router) |
+| Backend         | N/A - Server-side rendering nativo |
 | Database        | Local JSON files |
-| Styling         | TailwindCSS |
-| UI Components   | Shadcn/UI |
-| Animation       | Framer Motion |
-| Infrastructure  | Vercel/Numerical |
-| Observability | Basic metrics |
+| Styling         | TailwindCSS + CSS variables para theming |
+| UI Components   | Shadcn/UI (componentes acessíveis e tipados) |
+| Animation       | Framer Motion (uso conservador, apenas quando necessário) |
+| Infraestrutura  | Vercel ou hosting estático tradicional |
+| Observabilidade | Lighthouse CI + Web Vitals no build |
 
 ---
 
-# 📦 Data Strategy
+# 📦 Estratégia de Dados
 
-## Data Source
+## Fonte de Dados
 
-| Type       | Origin              |
+| Tipo       | Origem              |
 | ---------- | ------------------- |
-| Projects   | projects.json (local)   |
-| Experience | experience.json (local) | 
-| Skills     | skills.json (local)     |
+| Projects   | `projects.json` - Array declarativo com metadados técnicos e links |
+| Experience | `experience.json` - Timeline cronológica de carreira |
+| Skills     | `skills.json` - Taxonomia categorizada por domínio |
 
-## Update Strategy
+## Estratégia de Atualização
 
 **Projects:**
-New projects must be added only via JSON, without the need to alter React components.
+- Novos projetos adicionados apenas via JSON
+- Estrutura declarativa: título, descrição, tecnologias, links
+- Sem necessidade de alterar componentes React
+- Imagens lazy-loaded com placeholders otimizados
 
 **Experience:**
-Professional experiences must be rendered dynamically via declarative structure.
+- Experiências renderizadas dinamicamente via estrutura declarativa
+- Formato timeline com períodos e descrições concisas
+- Foco em impacto técnico e responsabilidades
 
-## Persistence Strategy
+## Estratégia de Persistência
 
-All data is persisted in local JSON files:
-- projects.json
-- experience.json  
-- skills.json
-
-No database required. Data is loaded at build time or runtime depending on rendering strategy.
-
----
-
-# 🧩 Core Functionalities
-
-- Hero section
-- Projects grid
-- Experience timeline
-- Dynamic SEO
-- Responsive layout
-- Mobile-first approach
-- Command palette
-- Dark mode toggle
-- Performance optimization
-
----
-
-# 📁 Conceptual Project Structure
-
-Representation only documentary.
-Does not represent scaffold real, provisionamento
-or automatic creation of files.
+Os dados persistem localmente como arquivos JSON no mesmo repositório:
 
 ```
-text
+/projects/
+  projects.json    # Portfólio de projetos técnicos
+  experience.json  # Histórico profissional
+  skills.json      # Competências categorizadas
+```
+
+---
+
+# 🧩 Funcionalidades Core
+
+- **Hero Section** - Apresentação concisa com foto, nome e stack principal
+- **Projects Grid** - Layout responsivo com filtros por tecnologia
+- **Experience Timeline** - Linha do tempo vertical de carreira
+- **Dynamic SEO** - Metadata programático por página e projeto
+- **Responsive Layout** - Mobile-first com breakpoints semânticos
+- **Mobile First** - Touch targets adequados, gestos intuitivos
+- **Command Palette** - Atalhos rápidos para navegação (opcional)
+- **Dark Mode** - Toggle persistente com preferência do sistema
+- **Performance Optimization** - Image optimization, code splitting automático
+
+---
+
+# 📁 Estrutura Conceitual do Projeto
+
+Representação apenas documental.
+Não representa scaffold real, provisionamento
+ou criação automática de arquivos.
+
+```txt
 portfolio-profissional-2026/
-├── app/                          # Next.js 15 App Router
-│   ├── layout.tsx              # Root layout with providers
-│   ├── page.tsx                # Home page (hero section)
-│   ├── about/                  # About page
-│   │   └── page.tsx
-│   ├── projects/               # Projects listing
-│   │   ├── page.tsx            # Grid view
-│   │   └── [slug]/             # Project detail pages
-│   │       └── page.tsx
-│   ├── experience/             # Experience timeline
-│   │   └── page.tsx
-│   └── skills/                 # Skills showcase
-│       └── page.tsx
-├── data/                       # JSON data files
-│   ├── projects.json
-│   ├── experience.json
-│   └── skills.json
-├── components/
-│   ├── ui/                     # Reusable UI components (Shadcn/UI)
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── badge.tsx
-│   │   └── ...other primitives
-│   ├── sections/               # Section components
-│   │   ├── hero-section.tsx
-│   │   ├── projects-grid.tsx
-│   │   ├── experience-timeline.tsx
-│   │   ├── skills-showcase.tsx
-│   │   └── footer.tsx
-│   ├── features/               # Feature-specific components
-│   │   ├── command-palette.tsx
-│   │   └── dark-mode-toggle.tsx
-│   └── dynamic/              # Dynamic rendering components
-│       ├── seo-provider.tsx
-│       └── metadata-loader.tsx
-├── lib/
-│   ├── data-loader.ts          # JSON loading utilities
-│   ├── seo-utils.ts           # SEO generation helpers
-│   ├── animations.ts         # Animation configurations
-│   └── validation.ts         # Data validation schemas
-├── styles/                   # Global styles
-│   └── globals.css            # Tailwind imports + custom CSS
-├── types/                    # TypeScript interfaces
-│   ├── project.ts
-│   ├── experience.ts
-│   ├── skill.ts
-│   └── index.ts              # Export all types
-├── public/                   # Static assets
-│   ├── images/
-│   └── fonts/
-├── next.config.ts            # Next.js configuration
-├── tailwind.config.ts        # Tailwind configuration
-├── tsconfig.json
+├── .ai/
+│   ├── actions/
+│   │   └── action-planner.md
+│   ├── requests/
+│   │   └── request-planner.md
+│   └── planner-out/
+│       └── planner.md          # Este arquivo
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx         # Root layout com metadata global
+│   │   ├── page.tsx           # Hero section principal
+│   │   ├── projects/
+│   │   │   └── page.tsx       # Grid de projetos
+│   │   ├── experience/
+│   │   │   └── page.tsx       # Timeline profissional
+│   │   └── skills/
+│   │       └── page.tsx      # Taxonomia de habilidades
+│   ├── components/
+│   │   ├── ui/                # Shadcn/UI componentes
+│   │   ├── layout/            # Layout components reutilizáveis
+│   │   ├── projects/          # Project cards e grids
+│   │   └── timeline/          # Experience timeline components
+│   ├── data/
+│   │   ├── projects.json
+│   │   ├── experience.json
+│   │   └── skills.json
+│   └── lib/
+│       ├── utils.ts           # Utility functions
+│       └── seo.ts             # Metadata helpers
+├── public/
+│   └── images/                # Assets otimizados
 ├── package.json
-└── README.md                 # Documentation
+├── tailwind.config.ts
+└── tsconfig.json
 ```
+
+---
+
+# 📊 Roadmap de Implementação
+
+## Fase 1: Fundação (Setup)
+- [ ] Inicializar Next.js 15 com App Router
+- [ ] Configurar TailwindCSS + Shadcn/UI
+- [ ] Criar schemas JSON iniciais
+- [ ] Estabelecer design system base
+
+## Fase 2: Componentes Core
+- [ ] Hero section com metadata dinâmico
+- [ ] Projects grid responsivo
+- [ ] Experience timeline component
+- [ ] Layout wrapper reutilizável
+
+## Fase 3: Dados e SEO
+- [ ] Popular schemas JSON iniciais
+- [ ] Configurar dynamic metadata
+- [ ] Implementar image optimization
+
+## Fase 4: Refinamento
+- [ ] Performance tuning (Lighthouse)
+- [ ] Acessibilidade audit
+- [ ] Mobile testing completo
+
+---
+
+# ⚠️ Riscos e Mitigações
+
+| Risco | Probabilidade | Impacto | Mitigação |
+| ----- | ------------- | ------- | --------- |
+| JSON mal formatado quebra layout | Baixa | Médio | Schema validation antes de renderizar |
+| Imagens não otimizadas afetam performance | Média | Alto | Next.js Image API + placeholders automáticos |
+| Expansão futura requer refatoração | Baixa | Baixo | Arquitetura modular desde o início |
+
+---
+
+# 📝 Decisões Operacionais
+
+1. **JSON como fonte única da verdade** - Nunca editar componentes para conteúdo
+2. **Server Components first** - Minimizar client-side JavaScript
+3. **Lazy loading agressivo** - Carregar apenas o necessário por viewport
+4. **No build complexo** - Keep dependencies minimalistas
+5. **Progressive enhancement** - Funciona sem JS, melhora com ele
+
+---
+
+# 🔮 Expansão Futura
+
+O projeto está preparado para:
+- Blog técnico (adicionar posts.json)
+- Documentação pessoal (mdx integration)
+- Integração com headless CMS quando necessário
+- Internacionalização (i18n) via JSON locale files
+- Automações com IA para geração de conteúdo
+
+---
+
+*Documento gerado exclusivamente para planejamento técnico.*
+*Nenhuma implementação, scaffold ou execução foi iniciada.*

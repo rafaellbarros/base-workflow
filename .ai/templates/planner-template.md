@@ -1,3 +1,5 @@
+<!-- OUTPUT_LANGUAGE governs the final rendered language -->
+
 # Planner: [PROJECT_NAME]
 
 - Documento exclusivamente de planejamento.
